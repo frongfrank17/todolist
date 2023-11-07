@@ -45,16 +45,23 @@ sorted
 f= field ที่จะ sort เช่น title , description , status , createAt
 
 **Get By type**
+
 GET | localhost:3000/api/todo/list/:type/Golang
 type = "title" || "description"
 
 **Update By Field**
+
 PUT | localhost:3000/api/todo/list/update/:field/:set/:id
 field= "title" || "description"
+
 **Update Status**
+
 PUT | localhost:3000/api/todo/list/update_status/completed/:id
+
 **Update Image**
+
 PATCH | localhost:3000/api/todo/list/update/image
+
 ```json
 {
    id="xxxx" 
