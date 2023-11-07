@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "58e2bba7-01eb-49c0-b142-21f89ecdd55a",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6499303"
+	},
+	"item": [
+		{
+			"name": "created",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Golang",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "GoLang Network",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/frongfrankmp/Desktop/Screenshot 2566-10-25 at 22.22.19.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/todo/created",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todo",
+						"created"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-lists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/todo/lists?f=title&sorted=1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todo",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "f",
+							"value": "title"
+						},
+						{
+							"key": "sorted",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "type-search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/todo/list/title/Golang",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todo",
+						"list",
+						"title",
+						"Golang"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/todo/list/update/description/Golang/3a1af6cf-2752-4bd7-8c0e-815f7a6a80e8",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todo",
+						"list",
+						"update",
+						"description",
+						"Golang",
+						"3a1af6cf-2752-4bd7-8c0e-815f7a6a80e8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/todo/list/update_status/completed/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todo",
+						"list",
+						"update_status",
+						"completed",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateimage",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/todo/list/update/image",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"todo",
+						"list",
+						"update",
+						"image"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

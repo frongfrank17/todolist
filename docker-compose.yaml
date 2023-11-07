@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: todo
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: P@ssw0rd
+    ports:
+      - "5432:5432"
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      POSTGRESS_DB: "todo"
+      POSTGRESS_USERNAME: "admin"
+      POSTGRESS_PASSWORD: "P@ssw0rd"
+      POSTGRESS_HOST: postgres
+      POSTGRESS_PORT: 5432
+      PORT: "3000"
+      NODE_ENV: "Development" 
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
